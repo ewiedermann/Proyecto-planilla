@@ -1,9 +1,8 @@
-function AlumnoItem(){
+function AlumnoItem(props){
     return(
         <li>
-            <span>V</span>
-            <p>Probar</p>
-            <span>X</span>
+            <p>{ props.text }</p>
+            <span>{ props.completado }</span>
         </li>
     );
 }
