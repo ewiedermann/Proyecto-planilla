@@ -1,3 +1,5 @@
+import '../../css/CantidadTema.css';
+
 //En las funciones se pueden tomar props, 
 //Si quiero recibir más de una props se hace así ({ props1, props2 })
 //Otra forma dentro de la función así props.total, props.cantidad
