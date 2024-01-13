@@ -1,7 +1,9 @@
 //Temas
-function ListarTema() {
+function ListarTema(props) {
     return ( 
-        <h1>Prueba</h1>
+        <ul>
+            {props.children}
+        </ul>
     );
 }
 

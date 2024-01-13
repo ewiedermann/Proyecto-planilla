@@ -1,7 +1,9 @@
 //Materia
-function ListarMateria() {
+function ListarMateria(props) {
     return ( 
-        <h1>Prueba</h1>
+        <ul>
+            {props.children}
+        </ul>
     );
 }
 

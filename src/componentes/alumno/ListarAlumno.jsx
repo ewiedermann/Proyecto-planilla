@@ -1,7 +1,10 @@
 //Alumnos
-function ListarAlumno() {
+//Manejo de props
+function ListarAlumno(props) {
     return ( 
-        <h1>Prueba</h1>
+        <ul>
+            {props.children}
+        </ul>
     );
 }
 
