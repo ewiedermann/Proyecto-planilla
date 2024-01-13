@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import { AgregarMateria } from './componentes/materia/AgregarMateria'
 import { CantidadAlumno } from './componentes/alumno/CantidadAlumno';
 import { ListarMateria } from './componentes/materia/ListarMateria';
