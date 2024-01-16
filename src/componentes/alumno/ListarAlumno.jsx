@@ -1,14 +1,7 @@
-//Alumnos
-//Manejo de props
-function ListarAlumno(props) {
-    return ( 
-        <ul>
-            {props.children}
-        </ul>
-    );
+import "../../css/ListarAlumno.css";
+
+function ListarAlumno({ children }) {
+  return <ul className="ListarAlumno">{children}</ul>;
 }
 
-//Exporto particular
-export {
-    ListarAlumno,
-};
+export { ListarAlumno };
