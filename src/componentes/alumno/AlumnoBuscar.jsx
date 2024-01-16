@@ -1,15 +1,23 @@
+import React from "react";
 import "../../css/AlumnoBuscar.css";
 
 function AlumnoBuscar() {
+  //No solo se consume, sino que se actualiza
+  //Se necesita una función actualizadora, para que sea inmutable. Donde se llama setState
+  //state, setState
+  //String vacio, es porque esperamos lo que ingrese el usuario
+  const [buscarAlumno, setBuscarAlumno] = React.useState("");
+
+  //Para mostrar como trabajan
+  //console.log("Los usuarios buscar los alumnos de " + buscarAlumno);
+
   return (
     <input
       placeholder="Cortar cebolla"
       className="AlumnoBuscar"
+      value={buscarAlumno}
       onChange={(event) => {
-        console.log("Escribiste en el AlumnoBuscar");
-        console.log(event);
-        console.log(event.target);
-        console.log(event.target.value);
+        setBuscarAlumno(event.target.value);
       }}
     />
   );
