@@ -14,12 +14,24 @@ const defaultAlumno = [
 ];
 
 function App() {
+  const [alumnos, setAlumnos] = React.useState(defaultAlumno);
+  const [buscarAlumno, setBuscarAlumno] = React.useState("");
+
+  const completedAlumnos = alumnos.filter(
+    (alumno) => !!alumno.completed
+  ).length;
+  const totalAlumnos = alumnos.length;
+
+  console.log("Los usuarios buscan todos de " + buscarAlumno);
   return (
     <React.Fragment>
       <AgregarMateria />
       {/* Para enviar los props al componente se hacen así */}
-      <CantidadAlumno curso={"6° 2°"} cantidad={35} />
-      <AlumnoBuscar />
+      <CantidadAlumno curso={completedAlumnos} cantidad={totalAlumnos} />
+      <AlumnoBuscar
+        searchValue={buscarAlumno}
+        setSearchValue={setBuscarAlumno}
+      />
 
       <ListarMateria>
         {/* Genera array desde otro 
