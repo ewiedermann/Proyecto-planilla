@@ -18,7 +18,7 @@ function App() {
   const [buscarAlumno, setBuscarAlumno] = React.useState("");
 
   const completedAlumnos = alumnos.filter(
-    (alumno) => !!alumno.completed
+    (alumno) => !!alumno.completado
   ).length;
   const totalAlumnos = alumnos.length;
 
@@ -27,6 +27,20 @@ function App() {
     const searchText = buscarAlumno.toLowerCase();
     return alumnoText.includes(searchText);
   });
+
+  const completeAlumno = (text) => {
+    const newAlumnos = [...alumnos];
+    const alumnoIndex = newAlumnos.findIndex((alumno) => alumno.text == text);
+    newAlumnos[alumnoIndex].completado = true;
+    setAlumnos(newAlumnos);
+  };
+
+  const deleteAlumno = (text) => {
+    const newAlumnos = [...alumnos];
+    const alumnoIndex = newAlumnos.findIndex((alumno) => alumno.text == text);
+    newAlumnos.splice(alumnoIndex, 1);
+    setAlumnos(newAlumnos);
+  };
 
   console.log("Los usuarios buscan todos de " + buscarAlumno);
   return (
@@ -52,7 +66,9 @@ function App() {
           <AlumnoItem
             key={alumno.text}
             text={alumno.text}
-            completado={alumno.completado}
+            completed={alumno.completado}
+            onComplete={() => completeAlumno(alumno.text)}
+            onDelete={() => deleteAlumno(alumno.text)}
           />
         ))}
       </ListarMateria>

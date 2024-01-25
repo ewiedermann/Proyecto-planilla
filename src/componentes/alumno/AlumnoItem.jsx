@@ -5,6 +5,7 @@ function AlumnoItem(props) {
     <li className="AlumnoItem">
       <span
         className={`Icon Icon-check ${props.completed && "Icon-check--active"}`}
+        onClick={props.onComplete}
       >
         V
       </span>
@@ -15,7 +16,9 @@ function AlumnoItem(props) {
       >
         {props.text}
       </p>
-      <span className="Icon Icon-delete">X</span>
+      <span className="Icon Icon-delete" onClick={props.onDelete}>
+        X
+      </span>
     </li>
   );
 }
