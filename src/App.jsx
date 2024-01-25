@@ -22,6 +22,12 @@ function App() {
   ).length;
   const totalAlumnos = alumnos.length;
 
+  const searchedAlumno = alumnos.filter((alumno) => {
+    const alumnoText = alumno.text.toLowerCase();
+    const searchText = buscarAlumno.toLowerCase();
+    return alumnoText.includes(searchText);
+  });
+
   console.log("Los usuarios buscan todos de " + buscarAlumno);
   return (
     <React.Fragment>
@@ -42,7 +48,7 @@ function App() {
                         <AlumnoItem/>
                 ))}
                 */}
-        {defaultAlumno.map((alumno) => (
+        {searchedAlumno.map((alumno) => (
           <AlumnoItem
             key={alumno.text}
             text={alumno.text}
